@@ -1,0 +1,9 @@
+[submodule "autolabel-anything-api"]
+	path = autolabel-anything-api
+	url = https://github.com/TAVTechnologies-Research/autolabel-anything-api.git
+[submodule "autolabel-anything-sam2-services"]
+	path = autolabel-anything-sam2-services
+	url = https://github.com/TAVTechnologies-Research/autolabel-anything-sam2-services.git
+[submodule "autolabel-anything-ui"]
+	path = autolabel-anything-ui
+	url = https://github.com/TAVTechnologies-Research/autolabel-anything-ui.git
