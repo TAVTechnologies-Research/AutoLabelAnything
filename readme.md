@@ -39,6 +39,8 @@ If you need:
 
 Then, **Auto Label Anything** is the right tool for you to contribute or directly use in your workflow.
 
+![Demo](./assets/demo.gif)
+
 ## Requirements
 
 _This project uses custom Nvidia/CUDA installations and requires a GPU to run. If you prefer, you can host the service submodule on a cloud provider while hosting other systems on your local server or PC._
