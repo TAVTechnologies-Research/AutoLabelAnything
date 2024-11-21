@@ -54,8 +54,8 @@ To start using it, you need to follow these steps:
     mkdir -p ./autolabel_data/user_videos
 ```
 
-2. Import the [`api.json`](./api.json) and [`api.env.json`](./api.env.json) files to [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.com/) or any other API tool to access the API collection.
-3. Send a POST request to load videos into the system. Use the following endpoint and payload (path should be accessible from the container):
+1. Import the [`api.json`](./api-docs/auto-label-anything-api.json) file to [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.com/) or any other API tool to access the API collection.
+2. Send a POST request to load videos into the system. Use the following endpoint and payload (path should be accessible from the container):
 
 ```bash
     POST http://localhost:8000/api/videos
