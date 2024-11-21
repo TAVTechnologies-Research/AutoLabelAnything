@@ -28,6 +28,7 @@
   - [Additional Information](#additional-information)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Contributors](#contributors)
   - [References](#references)
 
 ## Usage
@@ -78,7 +79,7 @@ To check the video status, you can use the following endpoint:
 6. After export, get your annotations from db. (_Note: Visualization and UI enabled editing will be added in the future._)
 
 ![Export](./assets/db.png)
-
+![ExportImage](./assets/demo-im.jpg)
 
 ## Requirements
 
@@ -149,7 +150,41 @@ Contribution is always welcome! The project contribution will be available after
 
 This project is licensed under the Apache 2.0 License. See the [LICENSE](License) file for details.
 
-**Important Note**: This project utilizes Meta's Segment Anything Model 2 (SAM2), which is licensed under the Apache 2.0 License. Additionally, PostgreSQL and Redis have their own license agreements. Users who want to use this software must comply with these licenses. TAV Technologies assumes no responsibility for any issues arising from the use of these third-party components. This is not a commercial product, just a side project that uses open-source software to show other use cases and target community needs.
+## Contributors
+
+We would like to thank the following contributors for their efforts (in alphabetical order):
+
+<p>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/deniz-peker/">Deniz Peker</a>
+  </span>
+  <br/>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/gokhankoctr/">Gokhan Koc</a>
+  </span>
+  <br/>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/ismailalpaydemir/">Ismail Alp Aydemir</a>
+  </span>
+  <br/>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/ozgurkisa/">Ozgur Kisa</a>
+  </span>
+  <br/>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/paras80/">Pursenk Aras</a>
+  </span>
+  <br/>
+  <span style="display: inline-flex; align-items: center;">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" style="margin-right: 5px;"/>
+    <a href="https://www.linkedin.com/in/zanasimsek/">Zana Simsek</a>
+  </span>
+</p>
 
 ## References
 
