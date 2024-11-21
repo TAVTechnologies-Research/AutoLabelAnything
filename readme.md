@@ -1,4 +1,4 @@
-# AUTO LABEL EVERYTHING
+# AUTO LABEL ANYTHING
 
 <p align="center">
   <img src="./assets/logo.png" alt="Project Logo" width="300"/>
@@ -17,7 +17,7 @@
 
 ## Table of Contents
 
-- [AUTO LABEL EVERYTHING](#auto-label-everything)
+- [AUTO LABEL ANYTHING](#auto-label-anything)
   - [Features](#features)
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
