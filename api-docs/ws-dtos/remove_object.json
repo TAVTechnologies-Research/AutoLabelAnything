@@ -1,0 +1,11 @@
+{
+    "msg_type": "remove_object",
+    "data": [
+        "object-id2"
+    ],
+    "meta": {
+        "returnType": "bbox",
+        "scale": 0.5,
+        "returnObjectThumbnail": true
+    }
+}

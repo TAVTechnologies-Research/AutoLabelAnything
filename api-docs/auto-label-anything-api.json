@@ -1,0 +1,634 @@
+{
+	"info": {
+		"name": "Auto Label Anything API",
+		"description": "This collection contains various API endpoints for managing videos, AI models, tasks, and frames in the Auto Label Anything system. The APIs are grouped by resource categories for easier management and usage.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"video_name\":\"737-demo\",\n    \"video_path\": \"/data/autolabeling_data/user_videos/737-short.mp4\",\n    \"target_fps\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/videos/add",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/videos/?thumbnail=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								""
+							],
+							"query": [
+								{
+									"key": "thumbnail",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "video",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/videos/16",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/videos/status/4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"status",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stream",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "package-size",
+								"value": "4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/videos/stream/7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"stream",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "partial stream",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Range",
+								"value": "bytes=0-9082",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/videos/stream-partial/7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"stream-partial",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/videos/7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"videos",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AiModels",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ai-models/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ai-models",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ai-models/4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ai-models",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Available Files",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/files/available_files",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"files",
+								"available_files"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Frames",
+			"item": [
+				{
+					"name": "Frame by Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "scale",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/frames/7/frame/0?scale=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"frames",
+								"7",
+								"frame",
+								"0"
+							],
+							"query": [
+								{
+									"key": "scale",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Frames",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "scale",
+								"value": "0.25",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "start_frame",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "end_frame",
+								"value": "500",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/frames/1?scale=0.2&start_frame=0&end_frame=0&thumbnail=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"frames",
+								"1"
+							],
+							"query": [
+								{
+									"key": "scale",
+									"value": "0.2"
+								},
+								{
+									"key": "start_frame",
+									"value": "0"
+								},
+								{
+									"key": "end_frame",
+									"value": "0"
+								},
+								{
+									"key": "thumbnail",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Inference",
+					"item": [
+						{
+							"name": "Init Task",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Set the response's data.uuid value to the environment variable TASK_UUID",
+											"//pm.test(\"Set data.uuid value to the environment variable TASK_UUID\", function () {",
+											"//    var responseData = pm.response.json();",
+											"//    pm.environment.set(\"TASK_UUID\", responseData.data.uuid);",
+											"//});",
+											"pm.environment.set(",
+											"    \"TASK_UUID\", pm.response.json().data.uuid",
+											");",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ai_model_id\": 4,\n    \"video_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/tasks/inference/initialize",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"tasks",
+										"inference",
+										"initialize"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Terminate Task",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/tasks/inference/terminate?task_uuid={{TASK_UUID}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"tasks",
+										"inference",
+										"terminate"
+									],
+									"query": [
+										{
+											"key": "task_uuid",
+											"value": "{{TASK_UUID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Annotation",
+					"item": [
+						{
+							"name": "Status (Single)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/tasks/annotation/status?task_uuid={{TASK_UUID}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"tasks",
+										"annotation",
+										"status"
+									],
+									"query": [
+										{
+											"key": "task_uuid",
+											"value": "{{TASK_UUID}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/tasks/annotation/?task_uuid={{TASK_UUID}}&annotation_format=bbox",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"tasks",
+										"annotation",
+										""
+									],
+									"query": [
+										{
+											"key": "task_uuid",
+											"value": "{{TASK_UUID}}"
+										},
+										{
+											"key": "annotation_format",
+											"value": "bbox",
+											"description": "Options: [all, bbox, polygon]"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Export -> DB",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/tasks/export/{{TASK_UUID}}?overwrite=true",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"tasks",
+										"export",
+										"{{TASK_UUID}}"
+									],
+									"query": [
+										{
+											"key": "overwrite",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Status (Single)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/tasks/status?task_uuid={{TASK_UUID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"tasks",
+								"status"
+							],
+							"query": [
+								{
+									"key": "task_uuid",
+									"value": "{{TASK_UUID}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All (Status)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/tasks/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"tasks",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All (Terminate)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/tasks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/tasks/{{TASK_UUID}}/reset?scale=0.2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"tasks",
+								"{{TASK_UUID}}",
+								"reset"
+							],
+							"query": [
+								{
+									"key": "scale",
+									"value": "0.2",
+									"description": "If not passed, frames will not be return"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Information (Single)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/tasks/{{TASK_UUID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"tasks",
+								"{{TASK_UUID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

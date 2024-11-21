@@ -1,0 +1,45 @@
+{
+    "msg_type": "add_points",
+    "data": [
+        {
+            "id": "object-id1",
+            "objectColor": "#2f7887",
+            "label": "label-1",
+            "child": [
+                {
+                    "id": "point-1-1",
+                    "frameNumber": 0,
+                    "x": 0.208,
+                    "y": 0.555,
+                    "markerType": 1
+                },
+                {
+                    "id": "point-1-2",
+                    "frameNumber": 0,
+                    "x": 0.286,
+                    "y": 0.324,
+                    "markerType": 0
+                }
+            ]
+        },
+        {
+            "id": "object-id2",
+            "objectColor": "#7a8a39",
+            "label": "label-2",
+            "child": [
+                {
+                    "id": "point-2-1",
+                    "frameNumber": 0,
+                    "x": 0.416,
+                    "y": 0.277,
+                    "markerType": 1
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "returnType": "bbox",
+        "scale": 0.1,
+        "returnObjectThumbnail": true
+    }
+}
