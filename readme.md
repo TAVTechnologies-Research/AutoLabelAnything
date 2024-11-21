@@ -1,7 +1,7 @@
-# AUTOLABEL EVERYTHING
+# AUTO LABEL EVERYTHING
 
 <p align="center">
-  <img src="./assets/logo.png" alt="Project Logo" width="200"/>
+  <img src="./assets/logo.png" alt="Project Logo" width="300"/>
 </p>
 
 **Auto Label Everything** is an open-source labeling tool designed to enhance and extend the capabilities of [Meta's Segment Anything Model 2 (SAM2)](https://github.com/facebookresearch/sam2). Our tool provides an intuitive interface for efficient annotation for videos. As the TAVTechnologies R&D Team, we started this side project to speed up the annotation process for our projects. Now, we want to share it with the community and continue developing it. We are planning to add more features and improve the tool in the future with additional support of opensourcers.
@@ -17,7 +17,7 @@
 
 ## Table of Contents
 
-- [AUTOLABEL EVERYTHING](#autolabel-everything)
+- [AUTO LABEL EVERYTHING](#auto-label-everything)
   - [Features](#features)
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
@@ -25,8 +25,10 @@
   - [Installation](#installation)
   - [Configuration](#configuration)
   - [Future Development](#future-development)
+  - [Additional Information](#additional-information)
   - [Contributing](#contributing)
   - [License](#license)
+  - [References](#references)
 
 ## Usage
 
@@ -40,6 +42,43 @@ If you need:
 Then, **Auto Label Anything** is the right tool for you to contribute or directly use in your workflow.
 
 ![Demo](./assets/demo.gif)
+
+UI is very similar to original Meta's SAM2 UI. However our UI enables more than three object (max size is three for original), video selection, export and model selection between predefined SAM2 models.
+
+To start using it, you need to follow these steps:
+
+1. Be sure to create a new folder to store your videos under the mounted volume in the docker-compose.yaml file. This folder will be used to store your videos and annotations.
+
+```bash
+    mkdir -p ./autolabel_data/user_videos
+```
+
+2. Import the [`api.json`](./api.json) and [`api.env.json`](./api.env.json) files to [Postman](https://www.postman.com/), [Hoppscotch](https://hoppscotch.com/) or any other API tool to access the API collection.
+3. Send a POST request to load videos into the system. Use the following endpoint and payload (path should be accessible from the container):
+
+```bash
+    POST http://localhost:8000/api/videos
+    Content-Type: application/json
+
+    {
+        "video_path": "/path/to/your/video.mp4",
+        "video_name": "your_video_name"
+    }
+```
+
+4. The video status will be `ready` when the initial video processing is complete. You can check it directly from database or send another request. You can now start annotating the video.
+
+To check the video status, you can use the following endpoint:
+
+```bash
+    GET http://localhost:8000/api/videos/status/{video_id}
+```
+
+5. Access the UI by navigating to `http://localhost:3000` in your web browser. You can start the annotation process by selecting the video you uploaded and using the provided tools to annotate objects in the video.
+6. After export, get your annotations from db. (_Note: Visualization and UI enabled editing will be added in the future._)
+
+![Export](./assets/db.png)
+
 
 ## Requirements
 
@@ -89,11 +128,18 @@ To use **Auto Label Everything**, follow these steps:
 
 ## Future Development
 
-* [ ] UI support for bbox prompt
-* [ ] Faster data transfer on UI side using bbox and polygon visualizations
-* [ ] Support for more computer vision tasks
+* [ ] Video upload support.
+* [ ] UI support for bbox prompt.
+* [ ] Faster data transfer on UI side using bbox and polygon visualizations.
+* [ ] Support for more computer vision tasks.
 * [ ] Support for other open-source labeling tools.
-* [ ] Support for zero-shot object detection models
+* [ ] Support for zero-shot object detection models.
+
+## Additional Information
+* Current DB Schema:
+  <p align="center">
+  <img src="./assets/db_schema.png" alt="Project Logo" width="400"/>
+</p>
 
 ## Contributing
 
@@ -104,3 +150,27 @@ Contribution is always welcome! The project contribution will be available after
 This project is licensed under the Apache 2.0 License. See the [LICENSE](License) file for details.
 
 **Important Note**: This project utilizes Meta's Segment Anything Model 2 (SAM2), which is licensed under the Apache 2.0 License. Additionally, PostgreSQL and Redis have their own license agreements. Users who want to use this software must comply with these licenses. TAV Technologies assumes no responsibility for any issues arising from the use of these third-party components. This is not a commercial product, just a side project that uses open-source software to show other use cases and target community needs.
+
+## References
+
+Below are the references that were instrumental in developing this project:
+
+1. **META Segment Anything 2**  
+   - [Official SAM2 Repository]([URL](https://github.com/facebookresearch/sam2))  
+
+2. **PostgreSQL**  
+   - [Official Website]([URL](https://www.postgresql.org/))  
+
+3. **Redis**  
+   - [Official Website]([URL](https://redis.io/))  
+
+4. **Demo Video**  
+   - [Video Used In Demo]([URL](https://www.youtube.com/watch?v=LqoydgYAJZs))  
+
+5. **Helper Websites You Can Use**
+   - [Hoppscotch](https://hoppscotch.com/)
+   - [Postman](https://www.postman.com/)
+   - [Docker](https://www.docker.com/)
+   - [Docker Compose](https://docs.docker.com/compose/)
+   - [React](https://reactjs.org/)
+   - [FastAPI](https://fastapi.tiangolo.com/)
