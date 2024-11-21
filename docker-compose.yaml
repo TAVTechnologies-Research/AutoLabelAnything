@@ -39,7 +39,7 @@ services:
     ports:
       - '8000:8051'
     volumes:
-      - autolabeling_data:/data
+      - ./autolabeling_data:/data
     deploy:
       resources:
         reservations:
@@ -61,7 +61,7 @@ services:
     env_file:
       - ./autolabel-anything-sam2-services/.env
     volumes:
-      - autolabeling_data:/data
+      - ./autolabeling_data:/data
     deploy:
       resources:
         reservations:
