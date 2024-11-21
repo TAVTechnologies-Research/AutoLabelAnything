@@ -4,7 +4,7 @@
   <img src="./assets/logo.png" alt="Project Logo" width="300"/>
 </p>
 
-**Auto Label Everything** is an open-source labeling tool designed to enhance and extend the capabilities of [Meta's Segment Anything Model 2 (SAM2)](https://github.com/facebookresearch/sam2). Our tool provides an intuitive interface for efficient annotation for videos. As the TAVTechnologies R&D Team, we started this side project to speed up the annotation process for our projects. Now, we want to share it with the community and continue developing it. We are planning to add more features and improve the tool in the future with additional support of opensourcers.
+**Auto Label Anything** is an open-source labeling tool designed to enhance and extend the capabilities of [Meta's Segment Anything Model 2 (SAM2)](https://github.com/facebookresearch/sam2). Our tool provides an intuitive interface for efficient annotation for videos. As the TAVTechnologies R&D Team, we started this side project to speed up the annotation process for our projects. Now, we want to share it with the community and continue developing it. We are planning to add more features and improve the tool in the future with additional support of opensourcers.
 
 ## Features
 
@@ -89,7 +89,7 @@ _This project uses custom Nvidia/CUDA installations and requires a GPU to run. I
 
 ## Installation
 
-To use **Auto Label Everything**, follow these steps:
+To use **Auto Label Anything**, follow these steps:
 
 1. **Clone the Repository**:
 
