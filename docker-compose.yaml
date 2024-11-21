@@ -1,0 +1,88 @@
+#version: '3.3'
+
+services:
+  # PostgreSQL Service
+  postgres:
+    image: postgres:15.6 # Use the official PostgreSQL version 15.6 image
+    container_name: postgres # Set a custom name for the PostgreSQL container
+    environment:
+      POSTGRES_USER: username # Username for PostgreSQL
+      POSTGRES_PASSWORD: password # Password for PostgreSQL
+      POSTGRES_DB: autolabeling # Default database to be created
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Persist PostgreSQL data using a Docker volume
+    ports:
+      - '5432:5432' # Expose port 5432 for PostgreSQL
+
+  ## Redis Service
+  redis:
+    image: redis/redis-stack:latest 
+    container_name: redis-stack # Set a custom name for the Redis container
+    environment:
+      REDIS_ARGS: "--requirepass password" # Set a password for Redis to enhance security
+    ports:
+      - '6379:6379' # Expose port 6379 for Redis
+    volumes:
+      - redis_data:/data # Persist Redis data using a Docker volume
+
+  # Autolabeling API Service
+  api:
+    build:
+      context: ./autolabel-anything-api
+      dockerfile: Dockerfile
+    container_name: autolabeling-api
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - ./autolabel-anything-api/.env
+    ports:
+      - '8000:8051'
+    volumes:
+      - autolabeling_data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+
+  # Autolabeling Backend Service
+  sam2-services:
+    build:
+      context: ./autolabel-anything-sam2-services
+      dockerfile: Dockerfile
+    container_name: sam2-services
+    depends_on:
+      - api
+      - postgres
+      - redis
+    env_file:
+      - ./autolabel-anything-sam2-services/.env
+    volumes:
+      - autolabeling_data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+
+  # Autolabeling Frontend Service
+  frontend:
+    build:
+      context: ./autolabel-anything-ui
+      dockerfile: Dockerfile
+    container_name: autolabeling-frontend
+    depends_on:
+      - api
+    env_file:
+      - ./autolabel-anything-ui/.env
+    ports:
+      - '3000:3000'
+
+volumes:
+  postgres_data: # Docker volume to persist PostgreSQL data
+  redis_data: # Docker volume to persist Redis data
