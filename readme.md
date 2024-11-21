@@ -150,6 +150,8 @@ Contribution is always welcome! The project contribution will be available after
 
 This project is licensed under the Apache 2.0 License. See the [LICENSE](License) file for details.
 
+**Important Note**: This project utilizes Meta's Segment Anything Model 2 (SAM2), which is licensed under the Apache 2.0 License. Additionally, PostgreSQL and Redis have their own license agreements. Users who want to use this software must comply with these licenses. TAV Technologies assumes no responsibility for any issues arising from the use of these third-party components. This is not a commercial product, just a side project that uses open-source software to show other use cases and target community needs.
+
 ## Contributors
 
 We would like to thank the following contributors for their efforts (in alphabetical order):
