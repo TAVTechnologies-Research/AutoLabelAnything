@@ -42,7 +42,7 @@ If you need:
 
 Then, **Auto Label Anything** is the right tool for you to contribute or directly use in your workflow.
 
-![Demo](./assets/demo.gif)
+
 
 UI is very similar to original Meta's SAM2 UI. However our UI enables more than three object (max size is three for original), video selection, export and model selection between predefined SAM2 models.
 
